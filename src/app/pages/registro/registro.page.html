@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="backbtn" routerLink="/welcome" routerDirection="back">
+        <ion-icon name="arrow-back-outline" color="blak"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-padding container">
+    <h1>REGISTRO USUARIO</h1> 
+
+    <div class="form-container text-center">
+      <div class="contenedor-img">
+        <img class="img-usuario" src="../../assets/usaurios/sin-foto.svg" >
+        <ion-fab-button color="success" >+</ion-fab-button>
+      </div>
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label position="floating">Teléfono</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password"></ion-input>
+        <ion-icon name="eye" slot="end"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Confirmar Contraseña</ion-label>
+        <ion-input type="password"></ion-input>
+        <ion-icon name="eye" slot="end"></ion-icon>
+      </ion-item>
+
+      <ion-button expand="block" class="main-button">Registrarme</ion-button>
+
+      <div class="sign-up">
+        ¿Ya tienes una cuenta? <ion-button color="dark" fill="clear" routerLink="/login" routerDirection="forward"  style="font-weight: bold; text-decoration:underline;">Iniciar Sesión</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

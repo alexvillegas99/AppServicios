@@ -1,5 +1,7 @@
 {
   "name": "Aver",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
