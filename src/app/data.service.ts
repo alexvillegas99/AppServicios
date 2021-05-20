@@ -27,18 +27,18 @@ export class DataService {
 
     let cat1: ICategory = {
       id: 1,
-      name: 'Womens',
-      image: '../../assets/categories/category-1.png'
+      name: 'Carpinteria',
+      image: '../../assets/categories/category-1.jpg'
     }
     let cat2: ICategory = {
       id: 2,
-      name: 'Mens',
-      image: '../../assets/categories/category-2.png'
+      name: 'Eletrónica',
+      image: '../../assets/categories/category-2.jpg'
     }
     let cat3: ICategory = {
       id: 3,
-      name: 'Kids',
-      image: '../../assets/categories/category-3.png'
+      name: 'Mecánica',
+      image: '../../assets/categories/category-3.jpg'
     }
 
     categories.push(cat1, cat2, cat3);
@@ -51,23 +51,23 @@ export class DataService {
 
     let prod1: IProduct = {
       id: 1,
-      name: 'Womens T-Shirt',
+      name: 'Carpinteria',
       price: 55,
-      image: '../../assets/products/prod-1.png'
+      image: '../../assets/products/prod-1.jpg'
     }
     let prod2: IProduct = {
       id: 2,
-      name: 'Mens T-Shirt',
+      name: 'Mecánica avanzada',
       price: 34,
-      image: '../../assets/products/prod-2.png'
+      image: '../../assets/products/prod-2.jpg'
     }
     let prod3: IProduct = {
       id: 1,
-      name: 'Womens T-Shirt',
+      name: 'Creación de Apps',
       price: 40,
-      image: '../../assets/products/prod-3.png'
+      image: '../../assets/products/prod-3.jpg'
     }
-
+ 
     products.push(prod1, prod2, prod3);
 
     return products;
@@ -78,21 +78,21 @@ export class DataService {
 
     let prod1: IProduct = {
       id: 1,
-      name: 'Womens T-Shirt',
+      name: 'Clases Online',
       price: 55,
       image: '../../assets/products/prod-4.png'
     }
     let prod2: IProduct = {
       id: 2,
-      name: 'Mens T-Shirt',
+      name: 'Direct TV',
       price: 34,
       image: '../../assets/products/prod-5.png'
     }
     let prod3: IProduct = {
       id: 1,
-      name: 'Womens T-Shirt',
+      name: 'Curso de belleza',
       price: 40,
-      image: '../../assets/products/prod-6.png'
+      image: '../../assets/products/prod-6.jpg'
     }
 
     products.push(prod1, prod2, prod3);
