@@ -1,6 +1,7 @@
 // This will remove iOS Header Line
 ion-toolbar,ion-header,ion-content {
   --border-width: 0 !important;
+  
 }
 
 // Removing Android Header Line
@@ -58,4 +59,20 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+img{
+  max-height: 200px;
+}
+@media screen and (min-width: 400px) {
+  img{
+      max-width: 200px!important;
+      max-height: 200px!important;
+  }
+  .container{
+max-height: 500px;
+max-width:500px;
+margin: auto;
+  }
+  
+
 }

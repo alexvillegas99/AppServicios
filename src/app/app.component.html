@@ -1,8 +1,11 @@
 <ion-app>
   <ion-menu contentId="main-content" type="overlay" [disabled]="!isMenuEnabled">
     <ion-content>
-      <div class="main-list">
-        <ion-list id="inbox-list">
+    
+    
+      <div class="main-list" style="margin-top:-50px">
+        
+        <ion-list id="inbox-list" >
 
           <ion-menu-toggle auto-hide="false">
             <ion-item lines="none" (click)="navigate('/home', 1)" detail="false" class="ion-text-center label" [class.selected]="selectedIndex == 1">
@@ -15,8 +18,8 @@
             </ion-item>
           </ion-menu-toggle>
           <ion-menu-toggle auto-hide="false">
-            <ion-item lines="none" (click)="navigate('/mis-servicios', 3)" detail="false" class="ion-text-center label" [class.selected]="selectedIndex == 3">
-              <ion-label >Mis Servicios</ion-label>
+            <ion-item lines="none" (click)="navigate('/mis-anuncios', 3)" detail="false" class="ion-text-center label" [class.selected]="selectedIndex == 3">
+              <ion-label >Mis Anuncios</ion-label>
             </ion-item>
           </ion-menu-toggle>
           <ion-menu-toggle auto-hide="false">

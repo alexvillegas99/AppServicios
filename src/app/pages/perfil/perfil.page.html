@@ -6,11 +6,7 @@
       </ion-menu-button>
     </ion-buttons>
 
-    <ion-buttons slot="end">
-      <ion-button class="notification">
-        <ion-icon name="notifications-outline" color="dark"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+   
   </ion-toolbar>
 </ion-header>
 
@@ -18,31 +14,34 @@
   <h1 class="title">Mi Perfil</h1>
 
   <div class="profile-info">
-    <div class="contenedor-img">
-      <img class="img-usuario" src="../../assets/usaurios/sin-foto.svg" >
-      <ion-fab-button color="success" >+</ion-fab-button>
-    </div>
+    
     <ion-item class="espacio-input">
       <ion-label position="floating">Nombre</ion-label>
-      <ion-input ></ion-input>
+      <ion-input [(ngModel)]="nombre" [disabled]="!editar"></ion-input>
     </ion-item>
     <ion-item  class="espacio-input">
       <ion-label position="floating">Teléfono</ion-label>
-      <ion-input ></ion-input>
+      <ion-input [(ngModel)]="telefono" [disabled]="!editar"></ion-input>
     </ion-item>
     <ion-item  class="espacio-input">
-      <ion-label position="floating">Ciudad</ion-label>
-      <ion-input> </ion-input>
+      <ion-label position="floating">Dirección</ion-label>
+      <ion-input [(ngModel)]="direccion" [disabled]="!editar"> </ion-input>
     </ion-item>
-    <ion-item  class="espacio-input"> 
-      <ion-label position="floating">Correo</ion-label>
-      <ion-input ></ion-input>
-    </ion-item>
+   
       <ion-button  class="espacio-input"
         expand="block"
         color="dark"
         fill="clear"
         style="color: black !important;"
+        (click)="editarDatos()"
         >Editar Datos</ion-button>
+        <ion-button  class="espacio-input"
+        expand="block"
+        color="dark"
+        fill="clear"
+        style="color: black !important;"
+        *ngIf="editar"
+        (click)="cancelar()"
+        >Cancelar</ion-button>
   </div>
 </ion-content>

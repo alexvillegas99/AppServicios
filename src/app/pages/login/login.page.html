@@ -1,6 +1,6 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
+<ion-header >
+  <ion-toolbar >
+    <ion-buttons slot="start" ç>
       <ion-button class="backbtn" routerLink="/welcome" routerDirection="back">
         <ion-icon name="arrow-back-outline" color="dark"></ion-icon>
       </ion-button>
@@ -14,22 +14,39 @@
     <div class="contenedor-img">
     <img style="margin-top: 15px;"  src="../../assets/welcome.png" />
     </div>
+    <form [formGroup]="loginForm" (ngSubmit)='login()'>
     <div class="form-container">
       <ion-item>
-        <ion-label  position="floating">Correo</ion-label>
-        <ion-input></ion-input>
+        <ion-label  position="floating" >Correo</ion-label>
+        <ion-input formControlName="usuario"></ion-input>
+        <span class="text-danger"
+        *ngIf="loginForm.get('usuario')?.hasError('required') && loginForm.get('usuario')?.touched">
+        El correo <strong>es requerido</strong>
+    </span>
+    <span class="text-danger"
+        *ngIf="loginForm.get('usuario')?.hasError('email') && loginForm.get('usuario')?.touched">
+        El correo <strong>es invalido</strong>
+    </span>
       </ion-item>
       <ion-item style="margin-top: 1rem;">
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" formControlName="password"></ion-input>
         <ion-icon name="eye" slot="end" color="dark"></ion-icon>
+        <span class="text-danger"
+        *ngIf="loginForm.get('password')?.hasError('required') &&  loginForm.get('password')?.touched">
+        La contraseña <strong>es requerida</strong>
+    </span>
       </ion-item>
 
-      <ion-button expand="block" class="main-button" (click)="login()">Iniciar Sesion</ion-button>
+      <ion-button expand="block" class="main-button" type="submit" [disabled]='loginForm.invalid'>Iniciar Sesion</ion-button>
 
       <div class="sign-up">
         No tienes una cuenta? <ion-button color="dark" fill="clear" routerLink="/registro" routerDirection="forward" style="font-weight: bold; text-decoration:underline;">Registrarme</ion-button>
       </div>
+      <div class="sign-up">
+        Olvidaste tu contraseña? <ion-button color="dark" fill="clear" routerLink="/recuperar" routerDirection="forward" style="font-weight: bold; text-decoration:underline;">Recuperar Cuenta</ion-button>
+      </div>
     </div>
+  </form>
   </div>
 </ion-content>

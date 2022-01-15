@@ -7,91 +7,26 @@
     </ion-buttons>
 
     <ion-buttons slot="end">
-      <ion-button class="notification">
-        <ion-icon name="notifications-outline" color="dark"></ion-icon>
+      <ion-button class="notification" (click)="presentModal()">
+        <ion-icon name="add-outline" color="dark"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen="true">
-  <h1 class="title">Mis Servicios</h1>
+  <h1 class="title">Mis Anuncios</h1>
 
   <div class="cart-items">
-    <ion-card mode="ios">
+    <ion-card mode="ios" *ngFor="let anuncio of anuncios">
       <ion-card-content>
         <div class="item-img">
-          <img src="../../assets/cart/cart1.jpg" />
+          <img [src]="anuncio.imagen[0]" />
         </div>
-
         <div class="item-info">
-          <p>Carpinteria</p>
-          <p>Carpinteria</p>
-          <p>$34.00</p>
-        </div>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card mode="ios">
-      <ion-card-content>
-        <div class="item-img">
-          <img src="../../assets/cart/cart2.jpg" />
-        </div>
-
-        <div class="item-info">
-          <p>Mecánica</p>
-          <p>Mecánica</p>
-          <p>$44.00</p>
-
-        
-        </div>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card mode="ios">
-      <ion-card-content>
-        <div class="item-img">
-          <img src="../../assets/cart/cart3.png" />
-        </div>
-
-        <div class="item-info">
-          <p>Clases en linea</p>
-          <p>Clases en linea</p>
-          <p>$54.00</p>
-
-        
-        </div>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card mode="ios">
-      <ion-card-content>
-        <div class="item-img">
-          <img src="../../assets/cart/cart4.jpg" />
-        </div>
-
-        <div class="item-info">
-          <p>Creación apps</p>
-          <p>Creación apps</p>
-          <p>$34.00</p>
-
-         
-        </div>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card mode="ios">
-      <ion-card-content>
-        <div class="item-img">
-          <img src="../../assets/cart/cart5.png" />
-        </div>
-
-        <div class="item-info">
-          <p>DirecTV</p>
-          <p>DirecTV</p>
-          <p>$44.00</p>
-
-        
+          <p>{{anuncio.titulo}}</p>
+          <p>{{anuncio.descripcion}}</p>
+          <p>$ {{anuncio.precio}}</p>
         </div>
       </ion-card-content>
     </ion-card>

@@ -5,68 +5,61 @@
           <ion-icon name="list-outline" color="dark"></ion-icon>
         </ion-menu-button>
     </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button class="notification">
-        <ion-icon name="notifications-outline" color="dark"></ion-icon>
-        <span>&nbsp;</span>
-      </ion-button>
-      <ion-button class="filter">
-        <ion-icon name="funnel-outline" color="dark"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+    
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="search ion-padding" >
-    <ion-searchbar placeholder="Buscar Servicio..."  type="text" (ionChange)="onSearchChange($event)" [debounce]="250" ></ion-searchbar>
-  </div>
+<ion-content class="cont">
+  <!-- <div class="search ion-padding" >
+    <ion-searchbar placeholder="Buscar..."  type="text" (ionChange)="onSearchChange($event)" [debounce]="250" ></ion-searchbar>
+  </div> -->
 
   <div class="title ion-padding">
-    <h2>Categorias</h2>
+    <h2>Casas</h2>
     <p>Mirar más</p>
   </div>
 
-  <div class="category-slider ion-padding-start">
+  <div class="product-slider ion-padding-start">
     <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
-      <ion-slide *ngFor="let category of categories">
-        <ion-col>
-          <h4>{{ category.name }}</h4>
-          <img src="{{ category.image }}" />
+      <ion-slide *ngFor="let casa of casas">
+        <ion-col class="ion-text-left" (click)="presentModal(casa)">
+          <img src="{{ casa.imagen[0] }}" />
+          <p>${{ casa.precio }}</p>
+          <h6>{{ casa.titulo }}</h6>
         </ion-col>
       </ion-slide>
     </ion-slides>
   </div>
 
   <div class="title ion-padding">
-    <h2>Destacados</h2>
+    <h2>Departamentos</h2>
     <p>Mirar más</p>
   </div>
 
   <div class="product-slider ion-padding-start">
     <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
-      <ion-slide *ngFor="let product of featuredProducts">
-        <ion-col class="ion-text-left" routerLink="/item-detail" routerDirection="forward">
-          <img src="{{ product.image }}" />
-          <p>${{ product.price }}</p>
-          <h6>{{ product.name }}</h6>
+      <ion-slide *ngFor="let departamento of departamentos">
+        <ion-col class="ion-text-left" (click)="presentModal(departamento)">
+          <img src="{{ departamento.imagen[0] }}" />
+          <p>${{ departamento.precio }}</p>
+          <h6>{{ departamento.titulo }}</h6>
         </ion-col>
       </ion-slide>
     </ion-slides>
   </div>
 
   <div class="title ion-padding">
-    <h2 >Todos los servicios</h2>
+    <h2>Terrnos</h2>
     <p>Mirar más</p>
   </div>
 
   <div class="product-slider ion-padding-start">
     <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
-      <ion-slide *ngFor="let product of bestSellProducts">
-        <ion-col class="ion-text-left" routerLink="/item-details" routerDirection="forward">
-          <img src="{{ product.image }}" />
-          <p>${{ product.price }}</p>
-          <h6>{{ product.name }}</h6>
+      <ion-slide *ngFor="let terreno of terrenos">
+        <ion-col class="ion-text-left"  (click)="presentModal(terreno)">
+          <img src="{{ terreno.imagen[0] }}" />
+          <p>${{ terreno.precio }}</p>
+          <h6>{{ terreno.titulo }}</h6>
         </ion-col>
       </ion-slide>
     </ion-slides>

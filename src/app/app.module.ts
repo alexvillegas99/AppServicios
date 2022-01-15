@@ -16,6 +16,8 @@ import { AngularFireAuthModule } from "@angular/fire/auth";  //Modulo de authent
 import { AngularFireModule } from "@angular/fire";            //Modulo para inicializar y que todo funcione
 import { AngularFireStorageModule } from "@angular/fire/storage"; //Storage
 import { environment } from 'src/environments/environment';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +26,8 @@ import { environment } from 'src/environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule,],
+    AngularFireStorageModule,
+    FormsModule, ReactiveFormsModule,ComponentsModule],
   providers: [SplashScreen,StatusBar,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent], 
 })

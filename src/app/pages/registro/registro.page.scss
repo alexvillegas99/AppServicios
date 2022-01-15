@@ -29,7 +29,9 @@ ion-toolbar {
 .form-container ion-item ion-label {
   color: #4b4949; 
 }
-
+ion-label{
+  margin-left: 10px !important;
+}
 .form-container ion-item ion-icon {
   margin-top: auto;
   color: #c6cbd4;
@@ -68,4 +70,20 @@ ion-fab-button{
   position: absolute;
   margin-top: 85px;
   margin-left: 85px;
+}
+@media screen and (min-width: 400px) {
+  img{
+      max-width: 200px!important;
+      max-height: 200px!important;
+  }
+
+    .container{
+  max-height: 500px;
+  max-width:500px;
+  margin: auto;
+    }
+    
+  
+  
+  
 }

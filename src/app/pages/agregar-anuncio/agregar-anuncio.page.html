@@ -1,0 +1,117 @@
+<ion-header >
+  <ion-toolbar >
+    <ion-buttons slot="start" >
+      <ion-button class="backbtn" (click)="cerrar()" >
+        <ion-icon name="arrow-back-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="color: black" > Agregar Anuncio </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding"> 
+  <div class="ion-padding contenedor" *ngIf="loading">
+    <app-spinner></app-spinner>
+  </div>
+  <div *ngIf="!loading">
+<form [formGroup]="anuncioForm" (ngSubmit)='agregar()'>
+  <ion-item >
+    <ion-label>Titulo: </ion-label>
+    <ion-input type="text" placeholder="Casa en venta" formControlName="titulo"></ion-input>
+ 
+    <span class="text-danger"
+        *ngIf="anuncioForm.get('titulo')?.hasError('required') && anuncioForm.get('titulo')?.touched">
+        El titulo <strong>es requerido</strong>
+      </span>
+  </ion-item>
+  <ion-item >
+    <ion-label>Precio: </ion-label>
+    <ion-input type="text" placeholder="100.000" formControlName="precio"></ion-input>
+    <span class="text-danger"
+    *ngIf="anuncioForm.get('precio')?.hasError('required') && anuncioForm.get('precio')?.touched">
+    El precio <strong>es requerido</strong>
+  </span>
+  </ion-item>
+  <ion-item >
+    <ion-label>Año: </ion-label>
+    <ion-input type="text" placeholder="2021" formControlName="anio"></ion-input>
+    
+  </ion-item>
+  <ion-item>
+    <ion-label>Tipo:</ion-label>
+    <ion-select formControlName="tipo">
+      <ion-select-option *ngFor="let tipo of tipos">{{tipo}}</ion-select-option>
+    </ion-select>
+    
+  </ion-item>
+  <ion-item>
+    <ion-label>Estado:</ion-label>
+    <ion-select formControlName="estado">
+      <ion-select-option *ngFor="let estado of estados">{{estado}}</ion-select-option>
+    </ion-select>
+    
+  </ion-item>
+  <ion-item >
+    <ion-label>Ciudad: </ion-label>
+    <ion-input type="text" placeholder="Ambato" formControlName="ciudad"></ion-input>
+    <span class="text-danger"
+    *ngIf="anuncioForm.get('ciudad')?.hasError('required') && anuncioForm.get('ciudad')?.touched">
+    La ciudad <strong>es requerido</strong>
+  </span>
+  </ion-item>
+  <ion-item >
+    <ion-label>Dirección: </ion-label>
+    <ion-input type="text" placeholder="av. Bolivariana y Seymour" formControlName="direccion"></ion-input>
+    <span class="text-danger"
+    *ngIf="anuncioForm.get('direccion')?.hasError('required') && anuncioForm.get('direccion')?.touched">
+    La dirección <strong>es requerido</strong>
+  </span>
+  </ion-item>
+  <ion-item >
+    <ion-label>Descipción: </ion-label>
+    <ion-input type="text" placeholder="Cuenta con 2 habitaciones...." formControlName="descripcion"></ion-input>
+    <span class="text-danger"
+    *ngIf="anuncioForm.get('descripcion')?.hasError('required') && anuncioForm.get('descripcion')?.touched">
+    La dirección <strong>es requerido</strong>
+  </span>
+  </ion-item>
+<ion-item (click)="presentModal()">
+  <ion-icon style="color: black" name="location-outline"></ion-icon>
+  <label>Ubicación : </label>
+  <label>{{ubicacion}}</label>
+</ion-item>
+  <ion-list>
+    <ion-list-header >
+      <ion-label style="font-size: 20px; color: black;font-weight: bold;" >Imagenes</ion-label>
+    </ion-list-header>
+    <ion-item >
+    
+      <input style="left: 0px;" type="file" accept="image/jpeg" name="inputFile" (change)="chooseFile1($event)" required>
+    </ion-item>
+    <ion-item >
+    
+      <input style="left: 0px;" type="file" accept="image/jpeg" name="inputFile" (change)="chooseFile2($event)" required>
+    </ion-item>
+    <ion-item >
+    
+      <input style="left: 0px;" type="file" accept="image/jpeg" name="inputFile" (change)="chooseFile3($event)" required>
+    </ion-item>
+    <ion-item >
+    
+      <input style="left: 0px;" type="file" accept="image/jpeg" name="inputFile" (change)="chooseFile4($event)" required>
+    </ion-item>
+    <ion-item >
+      <input style="left: 0px;" type="file" accept="image/jpeg" name="inputFile" (change)="chooseFile5($event)" required>
+    </ion-item>
+    
+  </ion-list>
+  <ion-button type="submit" color="success" expand="block" [disabled]='anuncioForm.invalid' >
+    Agregar
+  </ion-button>
+</form>
+  <ion-button expand="block" color="danger" (click)="dismiss()" >
+    Cancelar
+  </ion-button>
+</div>
+</ion-content>

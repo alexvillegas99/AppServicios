@@ -1,27 +1,33 @@
-export interface servicio{
+import { StringMapWithRename } from "@angular/compiler/src/compiler_facade_interface";
+
+export interface Usuario{
     id?:string,
-    creador:string,
-    categoria:string,
-    imagen:string,
-    titulo:string,
-    descripcion:string,
-    precio:number,
-    ubicacion:string
-}
-export interface categoria{
-    id?:string,
-    nombre:string,
-    imagen:string
-}
-export interface usuario{
-    id?:string,
+    uid?:string,
     nombre:string,
     telefono:string,
-    correo:string,
-    clave:string,
-    imagen:string,
-    informacion:string
+    direccion:string,
+    correo?:string,
+    clave?:string
 }
+export interface Anuncios{
+    id?:string,
+    uidPer:string,
+    titulo:string,
+    anio?:string,
+    estado:string,
+    tipo:string,
+    precio:number,
+    ciudad:string,
+    direccion:string,
+    descripcion:string,
+    imagen?:Imagenes[],
+    lng:string,
+    lat:string
+}
+export interface Imagenes{
+    titulo:string
+}
+
 
 export interface misServicios{
     id:string;

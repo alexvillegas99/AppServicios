@@ -130,7 +130,20 @@
     }
   }
   ion-content,ion-toolbar,body {
-     --background-color: #92949c;
+     --background-color: #91e0f6    !important;
       
   }
+  .container,body,.ion-padding,ion-toolbar{
+    --background: #91e0f6    !important;
+  }
   
+  /* 
+.color1 {color: #1a557c;}
+.color2 {color: #6d6d91;}
+.color3 {color: #908797;}
+.color4 {color: #aea5aa;}
+.color5 {color: #b8c0c3;}
+   */
+   .contenedor-img{
+     text-align: center;
+   }
